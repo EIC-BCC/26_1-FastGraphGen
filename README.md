@@ -15,10 +15,14 @@
    ```
 
 2. Crie o arquivo .env e configure as variaveis LLM_KEY e GROQ_KEY com as chaves de API do Gemini e do Groq, respectivamente.
-   ```cp .env.example .env``` (linux/mac)
-   ```copy .env.example .env``` (windows)
+   ```bash
+   cp .env.example .env  (linux/mac)
+   ``` 
+   ```bash
+   copy .env.example .env  (windows)
+   ```
 
-3. Troque no menu inferior do arquivo docker-entrypoint.sh CRLF para LF, e depois, no arquivo docker compose.yml troque a última linha para o conteúdo abaixo:
+4. Troque no menu inferior do arquivo docker-entrypoint.sh CRLF para LF, e depois, no arquivo docker compose.yml troque a última linha para o conteúdo abaixo:
 ```
 command: ["/app/docker-entrypoint.sh"]
 ```
