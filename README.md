@@ -1,8 +1,8 @@
 # FastGraphGen
 
-**Título do TCC:** FastGraphGen: Uma Interface Baseada em IA Generativa para Visualização Dinâmica de Dados do DATASUS
-**Alunos:** Sérgio L. Lemos Junior
-**Semestre de Defesa:** 2026-1
+* **Título do TCC:** FastGraphGen: Uma Interface Baseada em IA Generativa para Visualização Dinâmica de Dados do DATASUS
+* **Alunos:** Sérgio L. Lemos Junior
+* **Semestre de Defesa:** 2026-1
 
 [PDF do TCC](./Sergio_L_Lemos_Jr_-_TCC2_--_FastGraphGen_-_Uma_Interface_Baseada_em_IA_Generativa_para_Visualizacao_Dinamica_de_Dados_do_DATASUS.pdf)
 
