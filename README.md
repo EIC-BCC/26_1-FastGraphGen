@@ -17,7 +17,8 @@
 2. Crie o arquivo .env e configure as variaveis LLM_KEY e GROQ_KEY com as chaves de API do Gemini e do Groq, respectivamente.
    ```bash
    cp .env.example .env  (linux/mac)
-   ``` 
+   ```
+   
    ```bash
    copy .env.example .env  (windows)
    ```
