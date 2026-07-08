@@ -14,16 +14,16 @@
    git clone https://github.com/EIC-BCC/26_1-FastGraphGen.git
    ```
 
-2. Crie o arquivo .env e configure as variaveis LLM_KEY e GROQ_KEY com as chaves de API do Grmini e do Groq, respectivamente
+2. Crie o arquivo .env e configure as variaveis LLM_KEY e GROQ_KEY com as chaves de API do Gemini e do Groq, respectivamente.
    ```cp .env.example .env``` (linux/mac)
    ```copy .env.example .env``` (windows)
 
-3. Trocar no menu inferior do arquivo docker-entrypoint.sh CRLF para LF e no arquivo docker compose.yml trocar a ultima linha para
+3. Troque no menu inferior do arquivo docker-entrypoint.sh CRLF para LF, e depois, no arquivo docker compose.yml troque a última linha para o conteúdo abaixo:
 ```
 command: ["/app/docker-entrypoint.sh"]
 ```
 
-4. Rode o Docker e as seeds, e importe os dados
+4. Rode o Docker e as seeds, e importe os dados.
    ```bash
    docker compose up
    docker exec -it api python3 seed_data.py
@@ -33,7 +33,7 @@ command: ["/app/docker-entrypoint.sh"]
    http://localhost:8000/etl
    ```
 
-5. Acesse a pasta frontend, crie um arquivo .env com a variável VITE_API_URL como abaixo, e em seguida execute o yarn:
+5. Acesse a pasta frontend, crie um arquivo .env com a variável VITE_API_URL como abaixo, e em seguida execute o yarn.
    ```env
    VITE_API_URL=http://localhost:8000
    ```
