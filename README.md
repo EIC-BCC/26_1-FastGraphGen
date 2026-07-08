@@ -6,6 +6,44 @@
 
 [PDF do TCC](./Sergio_L_Lemos_Jr_-_TCC2_--_FastGraphGen_-_Uma_Interface_Baseada_em_IA_Generativa_para_Visualizacao_Dinamica_de_Dados_do_DATASUS.pdf)
 
+
+# TL;DR
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/EIC-BCC/26_1-FastGraphGen.git
+   ```
+
+2. Crie o arquivo .env e configure as variaveis LLM_KEY e GROQ_KEY com as chaves de API do Grmini e do Groq, respectivamente
+   ```cp .env.example .env``` (linux/mac)
+   ```copy .env.example .env``` (windows)
+
+3. Trocar no menu inferior do arquivo docker-entrypoint.sh CRLF para LF e no arquivo docker compose.yml trocar a ultima linha para
+```
+command: ["/app/docker-entrypoint.sh"]
+```
+
+4. Rode o Docker e as seeds, e importe os dados
+   ```bash
+   docker compose up
+   docker exec -it api python3 seed_data.py
+   ```
+   
+   ```bash
+   http://localhost:8000/etl
+   ```
+
+5. Acesse a pasta frontend, Crie um arquivo .env na pasta frontend com o conteúdo abaixo, e em seguida, execute o yarn:
+   ```env
+   VITE_API_URL=http://localhost:8000
+   ```
+
+   ```bash
+   yarn install
+   yarn dev
+   ```
+
+
 # Descrição Geral
 
 A tuberculose, embora curável e evitável, ainda é uma grave ameaça à saúde pública no Brasil. Para apoiar pesquisas epidemiológicas, o DATASUS disponibiliza ferramentas como o SINAN e o TABNET, mas seu uso costuma exigir conhecimento técnico e tempo de análise.
@@ -16,6 +54,7 @@ O **FastGraphGen** complementa essa base com um novo "motor" de geração de gr�
 
 Para evitar alucinações numéricas — um problema recorrente em ferramentas de IA generativa aplicadas à visualização de dados — a solução adota uma abordagem de dataset estático: os dados reais do DATASUS são embutidos no frontend em formato JSON, e o LLM é instruído a usar exclusivamente esses valores na construção dos gráficos, atuando apenas como gerador de código Vega-Lite e não como fonte dos dados em si.
 
+
 ## Novos arquivos
 * *BluePanel.jsx* -> ..\datasus-tuberculose-RAG\frontend\src\modules\chat\components
   * Arquivo responsável por dar forma à interface da noja janela e fazer parte da verificação/comunicação com a API do Groq;
@@ -25,6 +64,7 @@ Para evitar alucinações numéricas — um problema recorrente em ferramentas d
   * Versão modificada do index do projeto original para comportar a nova janela do Painel Azul;
 * *VegaChart.jsx* -> ..\datasus-tuberculose-RAG\frontend\src\modules\chat\components
   * Arquivo responsável pela compatibilidade com o Vega Lite na geração de gráficos.
+
   
 ## Funcionalidades
 
@@ -44,6 +84,7 @@ Para evitar alucinações numéricas — um problema recorrente em ferramentas d
 * **Modelo utilizado**
   * API Groq com o modelo `llama-3.3-70b-versatile`, escolhido pela acessibilidade gratuita, velocidade de resposta e facilidade de configuração de chave de API
 
+
 ## Arquitetura
 
 ![Fluxograma do Funcionamento do Sistema](./diagrama-final.png)
@@ -56,6 +97,7 @@ O fluxo funciona da seguinte forma:
 5. Mensagens subsequentes na mesma janela são tratadas como ajustes sobre o gráfico já gerado (cores, título, etc.), sem alterar os dados.
 
 Este módulo se conecta à arquitetura já existente do projeto original (backend em FastAPI + RAG + SQL, banco PostgreSQL, frontend React/Vite), atuando como uma camada adicional e paralela ao chat principal.
+
 
 ## Pré Requisitos
 
@@ -73,29 +115,24 @@ Este módulo se conecta à arquitetura já existente do projeto original (backen
 
 4. yarn ou npm
 
+
 ## Como começar
 
 1. Clone o repositório:
-
    ```bash
    git clone https://github.com/EIC-BCC/26_1-FastGraphGen.git
    ```
 
 2. Navegue até o diretório do projeto:
-
    ```bash
    cd 26_1-FastGraphGen
    ```
 
 3. Crie o arquivo .env
-
    ```cp .env.example .env``` (linux/mac)
-
-
    ```copy .env.example .env``` (windows)
 
 3.1. Coloque a sua chave de API do Gemini em LLM_KEY, e depois a chave de API do Groq em GROQ_KEY. O arquivo deve estar estruturado da seguinte forma:
-   
 	```bash
 	LLM_KEY=sua_chave_gemini_aqui
 	GROQ_KEY=sua_chave_groq_aqui
@@ -126,7 +163,6 @@ command: ["/app/docker-entrypoint.sh"]
    ```
 
 6. Importe os dados do datasus
-
    faça um get para
    ```bash
    http://localhost:8000/etl
