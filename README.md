@@ -10,7 +10,7 @@
 
 A tuberculose, embora curável e evitável, ainda é uma grave ameaça à saúde pública no Brasil. Para apoiar pesquisas epidemiológicas, o DATASUS disponibiliza ferramentas como o SINAN e o TABNET, mas seu uso costuma exigir conhecimento técnico e tempo de análise.
 
-Este trabalho dá continuidade ao projeto iniciado por [Chaves 2025], que implementou uma arquitetura de back-end baseada em LLM e RAG (Retrieval-Augmented Generation) para converter linguagem natural em consultas SQL sobre os dados do DATASUS, e por [de Mesquita Faben 2026], que desenvolveu o front-end (React + Observable Plot) responsável por transformar essas consultas em painéis interativos e mapas coropléticos.
+Este trabalho dá continuidade ao projeto iniciado por Thiago Chaves [Chaves 2025], que implementou uma arquitetura de back-end baseada em LLM e RAG (Retrieval-Augmented Generation) para converter linguagem natural em consultas SQL sobre os dados do DATASUS, e por Mrcos Faben [de Mesquita Faben 2026], que desenvolveu o front-end (React + Observable Plot) responsável por transformar essas consultas em painéis interativos e mapas coropléticos. A versão original deles pode ser encontrada em ```https://github.com/marcos-2002/datasus-tuberculose-RAG```
 
 O **FastGraphGen** complementa essa base com um novo "motor" de geração de gráficos: uma janela de chat dedicada, integrada à interface já existente, que permite ao usuário gerar e editar gráficos específicos (linhas, barras agrupadas, setores e heatmap) usando apenas linguagem natural, sem depender exclusivamente das visualizações automáticas geradas pelo chat principal.
 
