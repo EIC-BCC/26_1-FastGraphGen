@@ -33,7 +33,7 @@ command: ["/app/docker-entrypoint.sh"]
    http://localhost:8000/etl
    ```
 
-5. Acesse a pasta frontend, Crie um arquivo .env na pasta frontend com o conteúdo abaixo, e em seguida, execute o yarn:
+5. Acesse a pasta frontend, crie um arquivo .env com a variável VITE_API_URL como abaixo, e em seguida execute o yarn:
    ```env
    VITE_API_URL=http://localhost:8000
    ```
