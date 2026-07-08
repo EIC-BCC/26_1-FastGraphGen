@@ -78,13 +78,13 @@ Este módulo se conecta à arquitetura já existente do projeto original (backen
 1. Clone o repositório:
 
    ```bash
-   git clone xxx
+   git clone https://github.com/EIC-BCC/26_1-FastGraphGen.git
    ```
 
 2. Navegue até o diretório do projeto:
 
    ```bash
-   cd xxx
+   cd 26_1-FastGraphGen
    ```
 
 3. Crie o arquivo .env
